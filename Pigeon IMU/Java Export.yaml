@@ -1,0 +1,5 @@
+Pigeon IMU:
+  Defaults: "Component,None"
+  ClassName: "PigeonIMU"
+  Construction: "#variable($Name) = new ${ClassName}($CAN_ID);"
+  Import: "import com.ctre.phoenix.sensors.PigeonIMU;"

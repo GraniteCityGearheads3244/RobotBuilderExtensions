@@ -1,0 +1,5 @@
+Talon SRX:
+  Defaults: "Component,None"
+  ClassName: "WPI_TalonSRX"
+  Construction: "#variable($Name).reset(new ${ClassName}($CAN_ID));"
+  Import: "\\#include \"ctre/Phoenix.h\""

@@ -1,0 +1,24 @@
+!Component
+  name: CAN Speed Controller Group
+  type: PIDOutput
+  supports: {PIDOutput: 4}
+  help: CAN Speed Controller Group that slaves up to three can motors to one
+  properties:
+    - !ChildSelectionProperty
+      name: MasterSpeedController1
+      type: PIDOutput
+      validators: [CANSpeedControllerGroup, ChildDropdownSelected]
+      default: 0
+    - !ChildSelectionProperty
+      name: SpeedController2
+      type: PIDOutput
+      validators: [CANSpeedControllerGroup, ChildDropdownSelected]
+      default: 1
+    - !ChildSelectionProperty
+      name: SpeedController3
+      type: PIDOutput
+      default: null
+    - !ChildSelectionProperty
+      name: SpeedController4
+      type: PIDOutput
+      default: null

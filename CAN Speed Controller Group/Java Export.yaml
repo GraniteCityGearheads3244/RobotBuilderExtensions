@@ -1,0 +1,12 @@
+CAN Speed Controller Group:
+  Defaults: "Component,None"
+  ClassName: "SpeedControllerGroup"
+  Construction: ""
+  LiveWindow: ""
+  Extra: >-
+    //Set SlaveSpeedControllers to Follow MasterSpeedController
+            #variable($SpeedController2).follow(#variable($MasterSpeedController1));
+            #if(($SpeedController3))#variable($SpeedController3).follow(#variable($MasterSpeedController1));#end
+            
+            #if(($SpeedController4))#variable($SpeedController4).follow(#variable($MasterSpeedController1));#end
+            

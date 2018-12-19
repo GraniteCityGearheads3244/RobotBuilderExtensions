@@ -1,0 +1,10 @@
+!Component
+  name: NavX Micro
+  type: PIDSource
+  help: A 9-axis inertial/magnetic sensor and motion processor.
+  properties:
+    - !ChoicesProperty
+      name: SERIAL PORT
+      validators: [SERIALPORT]
+      choices: ["SPI.Port.kMXP","SPI.Port.kOnboardCS0","SPI.Port.kOnboardCS1","SPI.Port.kOnboardCS2","Port.kOnboard","Port.kUSB","Port.kUSB1","SPI::Port::kMXP","SPI::Port::Onboard","SPI::Port::USB"]
+      default: ""

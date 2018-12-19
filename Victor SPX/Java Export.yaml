@@ -1,0 +1,5 @@
+Victor SPX:
+  Defaults: "Component,None"
+  ClassName: "WPI_VictorSPX"
+  Construction: "#variable($Name) = new ${ClassName}($CAN_ID);"
+  Import: "import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;"

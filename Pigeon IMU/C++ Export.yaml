@@ -1,0 +1,5 @@
+Pigeon IMU:
+  Defaults: "Component,None"
+  ClassName: "PigeonIMU"
+  Construction: "#variable($Name).reset(new ${ClassName}($CAN_ID));"
+  Import: "\\#include \"ctre/Phoenix.h\""

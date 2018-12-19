@@ -1,0 +1,6 @@
+NavX Micro:
+  Defaults: "Component,None"
+  ClassName: "AHRS"
+  Construction: "#variable($Name) = new ${ClassName}($SERIAL_PORT));"
+  LiveWindow: "lw->AddSensor(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
+  Import: "\\#include \"AHRS.h\""

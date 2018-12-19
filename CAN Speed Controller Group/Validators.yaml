@@ -1,0 +1,3 @@
+!DistinctValidator
+name: CANSpeedControllerGroup
+fields: ["MasterSpeedController1", "SpeedController2", "SpeedController3", "SpeedController4"]

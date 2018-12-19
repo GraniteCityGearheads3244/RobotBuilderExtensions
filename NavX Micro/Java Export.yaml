@@ -1,0 +1,6 @@
+NavX Micro:
+  Defaults: "Component,None"
+  ClassName: "AHRS"
+  Construction: "try { #variable($Name) = new ${ClassName}($SERIAL_PORT);} catch (RuntimeException ex ) {DriverStation.reportError( ex.getMessage(), true);} Timer.delay(1.0);"
+  LiveWindow: "LiveWindow.addSensor(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
+  Import: "import edu.wpi.first.wpilibj.Timer; import edu.wpi.first.wpilibj.DriverStation; import com.kauailabs.navx.frc.AHRS; import edu.wpi.first.wpilibj.SPI; import edu.wpi.first.wpilibj.SerialPort.Port;"
