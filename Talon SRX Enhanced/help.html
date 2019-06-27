@@ -4,13 +4,14 @@
   </head>
 
   <body>
-      <h1>Talon SRX</h1>
+      <h1>Talon SRX Enhanced</h1>
 
       <center><img src="./icon.png" /></center>
 
     <h2>What is it?</h2>
     <p>A Talon motor controller that uses CAN protocol to control the
-       the attached motor.</p>
+       the attached motor.</p> 
+    <p>This Enhanced profile was created by Corey Applegate of team 3244 Granite City Gearheads</p>
 
 
     <h2>Properties</h2>
@@ -19,6 +20,22 @@
       <dt>CAN ID</dt>
       <dd>The ID of the CAN device. This must match the ID of the
           device configured with the roboRIO web-based configuration page.</dd>
+      <dt>Restore Factory Defaults</dt>
+      <dd>This is to assure any new motor controler is configured as intended</dd>
+      <dt>Inverted</dt>
+      <dd>Invert Motor to have green LEDs when driving Talon Forward / Requesting Postiive Output</dd>
+      <dt>Break Mode</dt>
+      <dd>Set to Coast or Break</dd>
+      <dt>Data Port Encoder</dt>
+      <dd>Select the feedback pugged into the Data Port or remote.</dd>
+      <dt>Sensor phase</dt>
+      <dd>Phase sensor to have positive increment when driving Talon Forward (Green LED)</dd>
+      <dt>Intended Control Mode</dt>
+      <dd>Some variables are not use in other modes</dd>
+      <dt>[P,I,D,F}</dt>
+      <dd>Populate the SlotIdx = 0</dd>
+      <dt>Motion Magic</dt>
+      <dd>Variable required when using Motion Magic</dd>
     </dl>
 
 
