@@ -1,5 +1,0 @@
-CANifier:
-  Defaults: "Component,None"
-  ClassName: "CANifier"
-  Construction: "#variable($Name) = new ${ClassName}($CAN_ID);"
-  Import: "import com.ctre.phoenix.CANifier;"
