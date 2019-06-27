@@ -1,0 +1,6 @@
+Spark MAX:
+  Defaults: "Subsystem,Component,None"
+  ClassName: "rev::CANSparkMax"
+  Construction: "rev::CANSparkMax #variable($Name){$CAN_ID, rev::CANSparkMax::MotorType::$MOTOR_TYPE};"
+  Import: "\\#include \"rev/CANSparkMax.h\""
+  
