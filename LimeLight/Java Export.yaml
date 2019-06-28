@@ -3,3 +3,16 @@ LimeLight:
   ClassName: "LimeLight"
   Construction: "#variable($Name) = new ${ClassName}(\"$Table_Name\");"
   Import: "import com.granitecitygearhead.frc3244.limelightlib.LimeLight;"
+  Extra: >-
+      /**
+      * Add the following to the build.gradle file
+                * repositories {
+                *       ...
+                *       maven { url 'https://jitpack.io' }
+                * }
+                *
+                * dependencies {
+                *       ...
+                *       implementation 'com.github.GraniteCityGearheads3244:Robot_Libraries:v0.0.1-alha.1'
+                * }
+                */
