@@ -1,0 +1,5 @@
+LimeLight:
+  Defaults: "Component,None"
+  ClassName: "LimeLight"
+  Construction: "#variable($Name) = new ${ClassName}(\"$Table_Name\");"
+  Import: "import com.granitecitygearhead.frc3244.limelightlib.LimeLight;"

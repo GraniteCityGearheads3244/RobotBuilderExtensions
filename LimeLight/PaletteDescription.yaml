@@ -1,0 +1,8 @@
+!Component
+  name: LimeLight
+  type: Sensor
+  help: A 9 degree-of-freedom IMU
+  properties:
+    - !StringProperty
+      name: Table Name
+      default: "limelight"
