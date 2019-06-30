@@ -1,0 +1,5 @@
+Lime Light:
+  Defaults: "Component,None"
+  ClassName: "LimeLight"
+  Construction: "#variable($Name) = new ${ClassName}(\"$NT_Name\");"
+  Import: "import com.granitecitygearhead.frc3244.limelightlib.LimeLight;"
