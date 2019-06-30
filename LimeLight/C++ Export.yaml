@@ -1,5 +1,0 @@
-LimeLight:
-  Defaults: "Component,None"
-  ClassName: "LimeLight"
-  Construction: "#variable($Name).reset(new ${ClassName}());"
-  Import: "\\#include \"ctre/Phoenix.h\""
