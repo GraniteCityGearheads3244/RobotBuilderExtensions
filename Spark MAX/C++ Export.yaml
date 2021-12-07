@@ -1,6 +1,7 @@
 Spark MAX:
   Defaults: "Subsystem,Component,None"
   ClassName: "rev::CANSparkMax"
+  Declaration: "${ClassName} #variable($Name){$CAN_ID, rev::CANSparkMax::MotorType::$MOTOR_TYPE};"
   Construction: "rev::CANSparkMax #variable($Name){$CAN_ID, rev::CANSparkMax::MotorType::$MOTOR_TYPE};"
   Import: "\\#include \"rev/CANSparkMax.h\""
   
