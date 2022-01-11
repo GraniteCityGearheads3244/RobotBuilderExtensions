@@ -1,0 +1,5 @@
+Talon FX:
+  Defaults: "CustomComponent,None"
+  ClassName: "WPI_TalonFX"
+  Declaration: "${ClassName} #variable($Name){$CAN_ID};"
+  Import: "\\#include \"ctre/Phoenix.h\""

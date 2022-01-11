@@ -1,0 +1,50 @@
+!Component
+  name: Talon FX Enhanced
+  type: PIDOutput
+  help: A CTRE CAN Motor Controller.
+  properties:
+    - !ChoicesProperty
+      name: CAN ID
+      validators: [CANID]
+      choices: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
+      default: "2"
+    - !BooleanProperty
+      name: Restore Factory Defaults
+      default: true
+    - !BooleanProperty
+      name: Inverted
+      default: false
+    - !ChoicesProperty
+      name: Break Mode
+      choices: ["Coast", "Brake"]
+      default: "Coast"
+    - !ChoicesProperty
+      name: Data Port Encoder
+      choices: ["None","CTRE_MagEncoder_Relative", "CTRE_MagEncoder_Absolute","QuadEncoder","Analog","Tachometer","PulseWidthEncodedPosition","SensorSum","SensorDifference","RemoteSensor0","RemoteSensor1","SoftwareEmulatedSensor"]
+      default: "None"
+    - !BooleanProperty
+      name: SensorPhase Invert
+      default: false
+    - !ChoicesProperty
+      name: Intended ControlMode
+      choices: ["PercentOutput","Position","Velocity", "Current","Follower","MotionProfile","MotionMagic","MotionProfileArc"]
+      default: "PercentOutput"
+    - !DoubleProperty
+      name: P
+      default: 0
+    - !DoubleProperty
+      name: I
+      default: 0
+    - !DoubleProperty
+      name: D
+      default: 0
+    - !DoubleProperty
+      name: F
+      default: 0
+    - !IntegerProperty
+      name: Motion Magic Cruise Velocity
+      default: 0
+    - !IntegerProperty
+      name: Motion Magic Acceleration
+      default: 0
+      

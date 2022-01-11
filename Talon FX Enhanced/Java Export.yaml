@@ -1,0 +1,48 @@
+Talon FX Enhanced:
+  Defaults: "CustomComponent,None"
+  ClassName: "WPI_TalonFX"
+  Construction: "#variable($Name) = new ${ClassName}($CAN_ID);"
+  Import: "import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+  import com.ctre.phoenix.motorcontrol.NeutralMode;"
+  Extra: >-
+      #set($kPIDLoopIdx = 0)
+      #set($kSlotIdx = 0)
+      #set($kTimeoutMs = 30)
+      /* Factory default hardware to prevent unexpected behavior */
+              #if(!$Restore_Factory_Defaults)//#end#variable($Short_Name).configFactoryDefault();
+
+              /* Invert Motor? and set Break Mode */
+              #variable($Short_Name).setInverted($Inverted);
+              #variable($Short_Name).setNeutralMode(NeutralMode.$Break_Mode);
+
+              /* Set the peak and nominal outputs */
+              #variable($Short_Name).configNominalOutputForward(0, $kTimeoutMs);
+              #variable($Short_Name).configNominalOutputReverse(0, $kTimeoutMs);
+              #variable($Short_Name).configPeakOutputForward(1, $kTimeoutMs);
+              #variable($Short_Name).configPeakOutputReverse(-1, $kTimeoutMs);
+              
+              #if($Data_Port_Encoder != "None")/* Configure Sensor */
+              // Phase sensor to have positive increment when driving Talon Forward (Green LED)
+              #variable($Short_Name).configSelectedFeedbackSensor(FeedbackDevice.$Data_Port_Encoder, $kPIDLoopIdx, $kTimeoutMs);
+              #variable($Short_Name).setSensorPhase($SensorPhase_Invert);
+
+              #if($Intended_ControlMode != "PercentOutput")/* Set relevant frame periods to be at least as fast as periodic rate */
+              #variable($Short_Name).setStatusFramePeriod(StatusFrameEnhanced.Status_13_Base_PIDF0, 10, $kTimeoutMs);
+              #variable($Short_Name).setStatusFramePeriod(StatusFrameEnhanced.Status_10_MotionMagic, 10, $kTimeoutMs);
+              #end
+              
+              /* Config sensor used for Primary PID [Velocity] */
+              #variable($Short_Name)configSelectedFeedbackSensor(TalonFXFeedbackDevice.IntegratedSensor, $kPIDLoopIdx, $kTimeoutMs);
+
+              /* Set gains in slot0 - see documentation */
+              #variable($Short_Name).selectProfileSlot($kSlotIdx, $kPIDLoopIdx);
+              #variable($Short_Name).config_kF($kSlotIdx, $F, $kTimeoutMs);
+              #variable($Short_Name).config_kP($kSlotIdx, $P, $kTimeoutMs);
+              #variable($Short_Name).config_kI($kSlotIdx, $I, $kTimeoutMs);
+              #variable($Short_Name).config_kD($kSlotIdx, $D, $kTimeoutMs);
+              
+              #if($Intended_ControlMode == "MotionMagic")/* Set acceleration and vcruise velocity - see documentation */
+              #variable($Short_Name).configMotionCruiseVelocity($Motion_Magic_Cruise_Velocity, $kTimeoutMs);
+              #variable($Short_Name).configMotionAcceleration($Motion_Magic_Acceleration, $kTimeoutMs);
+              #end
+              #end
