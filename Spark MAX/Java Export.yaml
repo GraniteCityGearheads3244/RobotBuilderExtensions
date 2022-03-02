@@ -8,5 +8,6 @@ Spark MAX:
         
               #variable($Short_Name).setInverted(${Inverted});
               #variable($Short_Name).setIdleMode(IdleMode.$Idle_Mode);
+              #variable($Short_Name).burnFlash();
         
       
